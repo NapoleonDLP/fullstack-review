@@ -2,6 +2,8 @@ const fs = require('fs');
 const tls = require('tls');
 const request = require('request');
 const config = require('../config.js');
+const save = require('../database/index.js');
+
 // const bodyParser = require('body-parser');
 
 let getReposByUsername = (username) => {
@@ -16,8 +18,6 @@ let getReposByUsername = (username) => {
     }
   };
 
-
-
   // The options object has been provided to help you out,
   // but you'll have to fill in the URL
   request(options, (err, res, data) => {
@@ -26,7 +26,7 @@ let getReposByUsername = (username) => {
     } else {
       //responseBody is an array of all that user info
       // console.log(res.body);
-      console.log(JSON.parse(res.body))
+      save(res.body);
     }
   })
 };
