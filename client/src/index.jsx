@@ -3,19 +3,30 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Search from './components/Search.jsx';
 import RepoList from './components/RepoList.jsx';
+// import getReposByUsername from '../../helpers/github.js';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       repos: []
     }
 
   }
 
   search (term) {
-    console.log(`${term} was searched`);
+    // console.log(typeof term);
     // TODO
+    //make ajax call to your server here
+    //invoke your getrepos from there
+    $.ajax({
+      type: "POST",
+      url: 'http://localhost:1128/repos',
+      data: {username:term}
+      // success: success,
+      // dataType: dataType
+    });
+    // getReposByUsername.getReposByUsername(term);
   }
 
   render () {
