@@ -15,10 +15,6 @@ class App extends React.Component {
   }
 
   search (term) {
-    // console.log(typeof term);
-    // TODO
-    //make ajax call to your server here
-    //invoke your getrepos from there
     $.ajax({
       type: "POST",
       url: 'http://localhost:1128/repos',
@@ -26,7 +22,6 @@ class App extends React.Component {
       // success: success,
       // dataType: dataType
     });
-    // getReposByUsername.getReposByUsername(term);
   }
 
   render () {
