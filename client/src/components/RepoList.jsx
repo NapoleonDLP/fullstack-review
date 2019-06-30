@@ -37,11 +37,10 @@ var RepoList = (props) => {
         There are {props.repos.length} repos.
         {props.repos.map(repo =>
           <div>
-            <div>Repo Name: {repo.name}</div>
-            <div><a herf={repo.html_url}>URL: {repo.html_url}</a></div>
-            <div>Forks: {repo.forks}</div>
-            <div>User: {repo.owner}</div>
-
+            <li>Repo Name: {repo.name}</li>
+            <ul><a href={repo.html_url} target="_blank">URL: {repo.html_url}</a></ul>
+            <ul>Forks: {repo.forks}</ul>
+            <ul>User: {repo.owner}</ul>
           </div>
         )}
       </div>
