@@ -18,16 +18,20 @@ class RepoList extends React.Component {
   render () {
     return (
       <div>
-        <h4> Repo List Component </h4>
+        <div id='listHeader'>
+          <h4> Repo List Component </h4>
           There are {this.state.repos.length} repos.
+        </div>
+        <div >
             {this.state.repos.map((repo, index) =>
-              <div key={index}>
+              <div id="list" key={index}>
                 <div>User: {repo.owner}</div>
                 <div>Repo name: {repo.name}</div>
                 <div>Forks: {repo.forks}</div>
                 <div><a href={repo.html_url} target="_blank">URL: {repo.html_url}</a></div>
               </div>
             )}
+        </div>
       </div>
     )
   }
