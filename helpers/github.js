@@ -4,7 +4,7 @@ const request = require('request');
 const config = require('../config.js');
 const db = require('../database/index.js');
 
-let getReposByUsername = (username) => {
+let getReposByUsername = (username, cb) => {
   let options = {
     url: `https://api.github.com/users/${username}/repos`,
     method: 'GET',
@@ -18,7 +18,7 @@ let getReposByUsername = (username) => {
     if (err) {
       console.log(err);
     } else {
-      db.save(res.body);
+      db.save(res.body, cb);
     }
   })
 };
