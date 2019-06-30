@@ -20,8 +20,8 @@ class RepoList extends React.Component {
       <div>
         <h4> Repo List Component </h4>
           There are {this.state.repos.length} repos.
-            {this.state.repos.map(repo =>
-              <div>
+            {this.state.repos.map((repo, index) =>
+              <div key={index}>
                 <div>User: {repo.owner}</div>
                 <div>Repo name: {repo.name}</div>
                 <div>Forks: {repo.forks}</div>
