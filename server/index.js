@@ -27,7 +27,10 @@ app.get('/repos', function (req, res) {
   db.query((err, data) => res.send(data));
 });
 
-let port = 1128;
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 1128;
+}
 
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
