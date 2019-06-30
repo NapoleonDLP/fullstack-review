@@ -1,0 +1,12 @@
+#listHeader {
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px;
+  background-color: bisque;
+}
+
+#list {
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgb(182, 235, 215);
+}
