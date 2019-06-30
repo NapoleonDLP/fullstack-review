@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Search from './components/Search.jsx';
 import RepoList from './components/RepoList.jsx';
-// import getReposByUsername from '../../helpers/github.js';
 
 class App extends React.Component {
 
